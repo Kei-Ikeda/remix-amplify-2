@@ -27,6 +27,7 @@ export default function Index() {
   const heIndexNum = responseJson.game_indices.find(
     (item) => item.version.name === POKE_SOFT_VERTION_NAME_GOLD
   )?.game_index;
+  const jsonText = JSON.stringify(responseJson);
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
@@ -38,7 +39,7 @@ export default function Index() {
           alt="pika"
         />
       </div>
-      {JSON.stringify(responseJson)}
+      <p>{jsonText}</p>
     </div>
   );
 }
