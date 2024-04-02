@@ -7,6 +7,7 @@ export const meta: MetaFunction = () => {
   return [
     { title: "Remix Poke" },
     { name: "description", content: "Remix amplify with Poke!" },
+    { name: "robots", content: "noindex" },
   ];
 };
 
@@ -31,7 +32,7 @@ export default function Index() {
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix with Poke</h1>
+      <h1>Welcome to Remix with Poke!</h1>
       <div>
         <p>{name}</p>
         <img
