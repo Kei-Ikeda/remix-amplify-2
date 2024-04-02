@@ -7,7 +7,7 @@ frontend:
         - yarn install
     build:
       commands:
-        - bash build-for-amplify-hosting.sh
+        - bash bin/postbuild.sh
   artifacts:
     baseDirectory: .amplify-hosting
     files:
