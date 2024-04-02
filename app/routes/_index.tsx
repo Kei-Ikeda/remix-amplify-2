@@ -38,7 +38,7 @@ export default function Index() {
           alt="pika"
         />
       </div>
-      {JSON.stringify(responseJson)}
+      <pre>{JSON.stringify(responseJson)}</pre>
     </div>
   );
 }
