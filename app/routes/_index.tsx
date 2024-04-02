@@ -13,18 +13,20 @@ export const meta: MetaFunction = () => {
 export const loader = async () => {
   const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
 
-  const responseJson:PokeAPI.Pokemon = await response.json();
+  const responseJson: PokeAPI.Pokemon = await response.json();
 
   // Return the data as JSON
   return json({ responseJson });
 };
 
-const POKE_SOFT_VERTION_NAME_GOLD = 'gold';
+const POKE_SOFT_VERTION_NAME_GOLD = "gold";
 
 export default function Index() {
   const { responseJson } = useLoaderData<typeof loader>();
   const name = responseJson.name;
-  const heIndexNum = responseJson.game_indices.find(item => item.version.name === POKE_SOFT_VERTION_NAME_GOLD)?.game_index
+  const heIndexNum = responseJson.game_indices.find(
+    (item) => item.version.name === POKE_SOFT_VERTION_NAME_GOLD
+  )?.game_index;
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
